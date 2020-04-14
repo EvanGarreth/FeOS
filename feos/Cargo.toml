@@ -22,4 +22,5 @@ panic = "abort"
 panic = "abort"
 
 [package.metadata.bootimage]
-run-command = ["./qemu.sh"]
+# running windows qemu via WSL so need to use a shell wrapper here
+run-command = ["./qemu.sh", "-drive", "format=raw,file={}"]
